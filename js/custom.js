@@ -75,9 +75,9 @@
   $('.parallaxie').parallaxie();
 
   // LOADER
-  $(window).load(function () {
-    $("#preloader").on(500).fadeOut();
-    $(".preloader").on(600).fadeOut("slow");
+  $(window).on('load', function () {
+    $("#preloader").delay(500).fadeOut();
+    $(".preloader").delay(600).fadeOut("slow");
   });
 
 
