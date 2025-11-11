@@ -74,10 +74,13 @@
   $('.heading').height($(window).height());
   $('.parallaxie').parallaxie();
 
-  // LOADER
-  $(window).on('load', function () {
-    $("#preloader").delay(500).fadeOut();
-    $(".preloader").delay(600).fadeOut("slow");
+  // LOADER - Hide immediately when DOM is ready (don't wait for images)
+  $(document).ready(function() {
+    // Hide preloader as soon as DOM is ready for instant feel
+    setTimeout(function() {
+      $("#preloader").fadeOut(300);
+      $(".preloader").fadeOut(300);
+    }, 100);
   });
 
 
@@ -88,9 +91,33 @@
 
 })(jQuery);
 
-// Initialize Owl Carousel for projects carousel
-$(document).ready(function () {
-  $(".projects-carousel").owlCarousel({
+// Wait for all libraries to load before initializing
+(function() {
+  // Ensure jQuery and plugins are loaded
+  function initializePlugins() {
+    // Initialize WOW.js for scroll animations
+    if (typeof WOW !== 'undefined') {
+      var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: false,
+        live: true
+      });
+      wow.init();
+    }
+    
+    // Initialize Owl Carousel only if jQuery and plugin are loaded
+    if (typeof jQuery !== 'undefined' && typeof jQuery.fn.owlCarousel !== 'undefined') {
+      initializeCarousels();
+    } else {
+      // Retry after a short delay if not loaded yet
+      setTimeout(initializePlugins, 100);
+    }
+  }
+  
+  function initializeCarousels() {
+    $(".projects-carousel").owlCarousel({
     loop: true,
     margin: 20,
     nav: false,
@@ -111,22 +138,30 @@ $(document).ready(function () {
     }
   });
 
-  $(".certificate-carousel").owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: false,
-    dots: false,
-    autoplay: false,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      1000: {
-        items: 2
+    $(".certificate-carousel").owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: false,
+      dots: false,
+      autoplay: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 2
+        }
       }
-    }
-  });
-});
+    });
+  }
+  
+  // Start initialization when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePlugins);
+  } else {
+    initializePlugins();
+  }
+})();

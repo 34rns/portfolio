@@ -9,6 +9,13 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://github.com" crossorigin>
+
     <!-- Site Metas -->
     <title>Raiya Noor Siam | Portfolio</title>
     <meta name="keywords"
@@ -22,18 +29,20 @@
     <link rel="apple-touch-icon"
         href="https://github.com/vungchung/forimgSource/blob/main/apple-touch-icon.png?raw=true">
 
-    <!-- Bootstrap CSS -->
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Site CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Non-critical CSS with async loading -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
+    
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></noscript>
 
 </head>
 
@@ -127,7 +136,7 @@
                 <div class="item">
                     <div class="project-card">
                         <img src="https://github.com/vungchung/forimgSource/blob/main/Screenshot%202025-09-08%20091432.png?raw=true"
-                            alt="Project 2" width="400" height="300">
+                            alt="Project 2" width="400" height="300" loading="lazy">
                         <div class="project-overlay">
                             <h4>Website For Language School</h4>
                             <p>A Local language school to learn Japanese</p>
@@ -139,10 +148,29 @@
                     </div>
                 </div>
 
+               
+               
+
+                 <div class="item">
+                    <div class="project-card">
+                        <img src="https://i.imgur.com/170jRxQ.png"
+                            alt="Project Placeholder" width="400" height="300" loading="lazy">
+                        <div class="project-overlay">
+                            <h4>RISE: Hunter's Ascent</h4>
+                            <p>A solo level anime themed exercise app</p>
+                            <a href="https://rise-hunters-ascent.vercel.app/" class="project-link">View Project</a>
+                            <a href="https://github.com/34rns/RISE-Hunter-s-Ascent" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+               
                 <div class="item">
                     <div class="project-card">
                         <img src="https://github.com/vungchung/new/blob/main/projectHolder.webp?raw=true"
-                            alt="Project Placeholder" width="400" height="300">
+                            alt="Project Placeholder" width="400" height="300" loading="lazy">
                         <div class="project-overlay">
                             <h4>more coming soon</h4>
                             <p>Not added YET</p>
@@ -151,6 +179,11 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </div>
     </section>
@@ -169,7 +202,7 @@
                     <div
                         class="bg-purple-800/20 backdrop-blur-lg rounded-2xl shadow-lg p-5 text-center text-white border border-purple-500/30">
                         <img src="https://i.imgur.com/zXi0LLd.gif" alt="Cybersecurity" width="128" height="128"
-                            class="mx-auto object-contain mb-4">
+                            class="mx-auto object-contain mb-4" loading="lazy">
                         <h3 class="text-black text-lg font-bold uppercase">Cybersecurity</h3>
                         <ul class="mt-2 space-y-1 text-gray-600 text-left">
                             <li>Networking</li>
@@ -184,7 +217,7 @@
                     <div
                         class="bg-blue-800/20 backdrop-blur-lg rounded-2xl shadow-lg p-5 text-center text-white border border-blue-500/30">
                         <img src="https://github.com/vungchung/forimgSource/blob/main/editing.gif?raw=true"
-                            alt="Video Editing" width="128" height="128" class="mx-auto object-contain mb-4">
+                            alt="Video Editing" width="128" height="128" class="mx-auto object-contain mb-4" loading="lazy">
                         <h3 class="text-black text-lg font-bold uppercase">Video Editing</h3>
                         <ul class="mt-2 space-y-1 text-gray-600 text-left">
                             <li>Adobe Premiere Pro</li>
@@ -196,7 +229,7 @@
                     <div
                         class="bg-purple-800/20 backdrop-blur-lg rounded-2xl shadow-lg p-5 text-center text-white border border-purple-500/30">
                         <img src="https://github.com/vungchung/forimgSource/blob/main/developer.gif?raw=true"
-                            alt="Web Developer" width="128" height="128" class="mx-auto object-contain mb-4">
+                            alt="Web Developer" width="128" height="128" class="mx-auto object-contain mb-4" loading="lazy">
                         <h3 class="text-black text-lg font-bold uppercase">Web Developer</h3>
                         <ul class="mt-2 space-y-1 text-gray-600 text-left">
                             <li>Frontend</li>
@@ -208,7 +241,7 @@
                     <div
                         class="bg-blue-800/20 backdrop-blur-lg rounded-2xl shadow-lg p-5 text-center text-white border border-blue-500/30">
                         <img src="https://github.com/vungchung/forimgSource/blob/main/design-designer.gif?raw=true"
-                            alt="Graphic Designer" width="128" height="128" class="mx-auto object-contain mb-4">
+                            alt="Graphic Designer" width="128" height="128" class="mx-auto object-contain mb-4" loading="lazy">
                         <h3 class="text-black text-lg font-bold uppercase">Graphic Designer</h3>
                         <ul class="mt-2 space-y-1 text-gray-600 text-left">
                             <li>Photoshop</li>
@@ -234,7 +267,7 @@
                         class="certificate-card block bg-white border border-gray-300 shadow-md rounded-lg p-6 mx-2 hover:shadow-lg transition-shadow">
                         <img src="https://github.com/vungchung/new/blob/main/freecodecampJs.webp?raw=true"
                             alt="JS Certificate" width="400" height="250"
-                            class="mx-auto mb-4 object-contain rounded-t-lg">
+                            class="mx-auto mb-4 object-contain rounded-t-lg" loading="lazy">
                         <h4 class="text-black font-bold text-lg mb-1 text-center">Legacy JavaScript Algorithms and Data
                             Structures Certification</h4>
                         <p class="text-gray-500 text-sm text-center">FreeCodeCamp Authentication</p>
@@ -246,7 +279,7 @@
                         class="certificate-card block bg-white border border-gray-300 shadow-md rounded-lg p-6 mx-2 hover:shadow-lg transition-shadow">
                         <img src="https://github.com/vungchung/new/blob/main/freecodecampJs.webp?raw=true"
                             alt="Placeholder Certificate" width="400" height="250"
-                            class="mx-auto mb-4 object-contain rounded-t-lg">
+                            class="mx-auto mb-4 object-contain rounded-t-lg" loading="lazy">
                         <h4 class="text-black font-bold text-lg mb-1 text-center">More Coming Soon</h4>
                         <p class="text-gray-500 text-sm text-center">Stay tuned for updates</p>
                     </a>
@@ -261,7 +294,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full md:w-7/12 relative">
                     <img src="https://github.com/vungchung/forimgSource/blob/main/videofooter.gif?raw=true"
-                        alt="Contact Banner" width="600" height="400">
+                        alt="Contact Banner" width="600" height="400" loading="lazy">
                     <div class="absolute inset-0 flex items-center justify-center">
                         <h1 class="text-white text-5xl font-bold">Contact Me</h1>
                     </div>
@@ -280,13 +313,13 @@
                         <h2 class="text-3xl font-extrabold neon-text uppercase mb-4">Social</h2>
                         <div class="flex items-center space-x-4 mb-3">
                             <img src="https://github.com/vungchung/forimgSource/blob/main/discord-profile-black.gif?raw=true"
-                                alt="Discord" width="40" height="40" class="rounded-full" />
+                                alt="Discord" width="40" height="40" class="rounded-full" loading="lazy" />
                             <a href="https://discord.gg/TEUeCfhvgh" class="text-xl font-bold neon-text-glow"
                                 target="_blank">Discord</a>
                         </div>
                         <div class="flex items-center space-x-4">
                             <img src="https://github.com/vungchung/forimgSource/blob/main/glich-instagram.gif?raw=true"
-                                alt="Instagram" width="40" height="40" class="rounded-full" />
+                                alt="Instagram" width="40" height="40" class="rounded-full" loading="lazy" />
                             <a href="https://www.instagram.com/raiyan___102938/"
                                 class="text-xl font-bold neon-text-glow" target="_blank">Instagram</a>
                         </div>
@@ -300,14 +333,17 @@
     </section>
 
 
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
+    <!-- Core Libraries - Load synchronously in order -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    
+    <!-- Custom Scripts - Execute immediately after dependencies -->
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/parallaxie.js"></script>
     <script src="js/headline.js"></script>
-    <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/jquery.vide.js"></script>
 
 </body>
 
